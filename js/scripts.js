@@ -62,7 +62,22 @@ $(document).ready(function () {
           $('.danial-hamburger-close-btn').css({'display':'none'});
     
    });
+//Show and hide top-posts-widget ul
 
+    $(".top-posts-navigation li").click(function (e) {
+        e.preventDefault();
+        $(this).children("a").css({
+            "color": "#fcc03b",
+            "border-bottom": "1px solid #fcc03b"
+        });
+        $(this).siblings("li").children().css({
+            "color": "#666f73",
+            "border-bottom": "none"
+        });
+        var index = $(this).index();
+        $(".top-posts-container ul").eq(index).fadeIn(1000).siblings().css("display", "none");
+
+    });
 
 
 });
